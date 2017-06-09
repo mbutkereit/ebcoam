@@ -1,0 +1,5 @@
+name: Ebcoam
+type: module
+description: Allow the usage of Web Components.
+core: 8.x
+package: Block

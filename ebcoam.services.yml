@@ -1,0 +1,4 @@
+services:
+  asset.web_components.collection_renderer:
+    class: Drupal\ebcoam\Asset\WebComponentCollectionRenderer
+    arguments: [ '@state' ]

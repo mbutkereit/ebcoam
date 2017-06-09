@@ -1,0 +1,4 @@
+carousel:
+  version: VERSION
+  webcomponent:
+     components/my-carousel.html: {}

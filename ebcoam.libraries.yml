@@ -1,0 +1,7 @@
+polymer:
+  header: true
+  version: VERSION
+  js:
+     js/webcomponents-lite.js: {}
+  webcomponent:
+     components/polymer-element.html: {}

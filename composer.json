@@ -1,0 +1,8 @@
+{
+  "name": "comm-press/ebcoam",
+  "type": "drupal-module-custom",
+  "description": "Allow the usage of Web Components.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev"
+}

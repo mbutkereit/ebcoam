@@ -1,0 +1,5 @@
+name: Test Block
+type: module
+description:  A Block to test the web component integration.
+core: 8.x
+package: Block
