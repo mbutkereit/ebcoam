@@ -67,8 +67,8 @@ class WebComponentCollectionRenderer implements AssetCollectionRendererInterface
           $element['#attributes']['href'] = file_url_transform_relative(file_create_url($web_component_asset['data']));
           // Only add the cache-busting query string if this isn't an aggregate
           // file.
-          if (!isset($js_asset['preprocessed'])) {
-            $element['#attributes']['href'] .= $query_string_separator . ($js_asset['cache'] ? $query_string : REQUEST_TIME);
+          if (!isset($web_component_asset['preprocessed'])) {
+            $element['#attributes']['href'] .= $query_string_separator . ($web_component_asset['cache'] ? $query_string : REQUEST_TIME);
           }
           break;
 
@@ -81,7 +81,7 @@ class WebComponentCollectionRenderer implements AssetCollectionRendererInterface
       }
 
       // Attributes may only be set if this script is output independently.
-      if (!empty($element['#attributes']['src']) && !empty($js_asset['attributes'])) {
+      if (!empty($element['#attributes']['src']) && !empty($web_component_asset['attributes'])) {
         $element['#attributes'] += $web_component_asset['attributes'];
       }
 
