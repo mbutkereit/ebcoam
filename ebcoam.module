@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * @file
+ */
+
 /**
  * Prepares variables for HTML document templates.
  *

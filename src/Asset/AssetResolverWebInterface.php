@@ -2,10 +2,13 @@
 
 namespace Drupal\ebcoam\Asset;
 
+use Drupal\Core\Asset\AssetResolverInterface;
 use Drupal\Core\Asset\AttachedAssetsInterface;
 
-interface AssetResolverWebInterface extends \Drupal\Core\Asset\AssetResolverInterface {
-
+/**
+ *
+ */
+interface AssetResolverWebInterface extends AssetResolverInterface {
 
   /**
    * Returns the JavaScript assets for the current response's libraries.
@@ -37,4 +40,5 @@ interface AssetResolverWebInterface extends \Drupal\Core\Asset\AssetResolverInte
    *     for the bottom of the page
    */
   public function getWebcomponentsAssets(AttachedAssetsInterface $assets, $optimize);
+
 }

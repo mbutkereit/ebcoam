@@ -1,11 +1,14 @@
 <?php
+
 namespace Drupal\ebcoam\Asset;
 
-
+use Drupal\Core\Asset\LibraryDiscoveryParser;
 use Drupal\Core\Asset\Exception\IncompleteLibraryDefinitionException;
 
-class LibraryDiscoveryParser extends \Drupal\Core\Asset\LibraryDiscoveryParser{
-
+/**
+ *
+ */
+class LibraryDiscoveryParser extends LibraryDiscoveryParser {
 
   /**
    * Parses and builds up all the libraries information of an extension.
@@ -170,8 +173,5 @@ class LibraryDiscoveryParser extends \Drupal\Core\Asset\LibraryDiscoveryParser{
 
     return $libraries;
   }
-
-
-
 
 }

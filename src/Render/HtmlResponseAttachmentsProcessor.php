@@ -2,6 +2,7 @@
 
 namespace Drupal\ebcoam\Render;
 
+use Drupal\Core\Render\HtmlResponseAttachmentsProcessor;
 use Drupal\Core\Asset\AssetCollectionRendererInterface;
 use Drupal\Core\Asset\AssetResolverInterface;
 use Drupal\Core\Asset\AttachedAssetsInterface;
@@ -11,7 +12,10 @@ use Drupal\Core\Render\RendererInterface;
 use Drupal\ebcoam\Asset\AssetResolverWebInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 
-class HtmlResponseAttachmentsProcessor extends \Drupal\Core\Render\HtmlResponseAttachmentsProcessor {
+/**
+ *
+ */
+class HtmlResponseAttachmentsProcessor extends HtmlResponseAttachmentsProcessor {
 
 
   protected $webComponentCollectionRenderer;
@@ -64,18 +68,16 @@ class HtmlResponseAttachmentsProcessor extends \Drupal\Core\Render\HtmlResponseA
   protected function processAssetLibraries(AttachedAssetsInterface $assets, array $placeholders) {
     $libraries = $assets->getLibraries();
     $libraries[] = 'ebcoam/polymer';
-    $assets->setLibraries( $libraries);
+    $assets->setLibraries($libraries);
     $variables = parent::processAssetLibraries($assets, $placeholders);
     // Print scripts - if any are present.
     $assetResolver = $this->assetResolver;
     if (isset($placeholders['webcomponent']) && $assetResolver instanceof AssetResolverWebInterface) {
 
-      //$optimize_js = !defined('MAINTENANCE_MODE') && !\Drupal::state()->get('system.maintenance_mode') && $this->config->get('js.preprocess');
-
+      // $optimize_js = !defined('MAINTENANCE_MODE') && !\Drupal::state()->get('system.maintenance_mode') && $this->config->get('js.preprocess');.
       $result = $assetResolver->getWebcomponentsAssets($assets, FALSE);
       $variables['webcomponent'] = $this->webComponentCollectionRenderer->render($result);
     }
-
 
     return $variables;
   }

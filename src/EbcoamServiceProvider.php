@@ -20,7 +20,6 @@ class EbcoamServiceProvider extends ServiceProviderBase {
         $definition = $container->getDefinition('library.discovery.parser');
         $definition->setClass('Drupal\ebcoam\Asset\LibraryDiscoveryParser');
 
-
         $definition = $container->getDefinition('html_response.attachments_processor');
         $definition->setClass('Drupal\ebcoam\Render\HtmlResponseAttachmentsProcessor');
         $definition->addArgument(new Reference('asset.web_components.collection_renderer'));

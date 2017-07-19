@@ -2,7 +2,6 @@
 
 namespace Drupal\ebcoam\Asset;
 
-use Drupal\Component\Serialization\Json;
 use Drupal\Core\Asset\AssetCollectionRendererInterface;
 use Drupal\Core\State\StateInterface;
 
@@ -58,7 +57,7 @@ class WebComponentCollectionRenderer implements AssetCollectionRendererInterface
       // Element properties that do not depend on JS asset type.
       $element = $element_defaults;
       $element['#browsers'] = $web_component_asset['browsers'];
-      $element['#attributes']         ['rel'] = 'import';
+      $element['#attributes']['rel'] = 'import';
       // Element properties that depend on item type.
       switch ($web_component_asset['type']) {
         case 'file':
