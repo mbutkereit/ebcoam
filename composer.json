@@ -1,6 +1,5 @@
 {
-  "name": "comm-press/ebcoam",
-  "type": "drupal-module-custom",
+  "name": "drupal/ebcoam",
   "description": "Allow the usage of Web Components.",
   "keywords": ["Drupal"],
   "license": "GPL-2.0+",
